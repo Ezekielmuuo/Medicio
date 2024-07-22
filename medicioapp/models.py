@@ -41,8 +41,30 @@ class Appointment(models.Model):
     def __str__(self):
         return self.name
 
+class Member(models.Model):
+    name = models.CharField(max_length=50)
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
+class ImageModel(models.Model):
+    image = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=50)
+    price = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.title
+
+
+class Admin(models.Model):
+    username =models.CharField(max_length=50)
+    password =models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.username
 
 
 
